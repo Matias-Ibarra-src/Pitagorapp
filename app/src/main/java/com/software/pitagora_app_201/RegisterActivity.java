@@ -66,19 +66,15 @@ public class RegisterActivity extends AppCompatActivity {
         String password = passwordP.getText().toString();
         String app = appP.getText().toString();
         String numero = numP.getText().toString();
-        if (nombre.equals("")){
+        if (nombre.equals("")) {
             nomP.setError("Required");
-        }
-        else if (app.equals("")){
+        } else if (app.equals("")) {
             appP.setError("Required");
-        }
-        else if (correo.equals("")){
+        } else if (correo.equals("")) {
             correoP.setError("Required");
-        }
-        else if (password.equals("")){
+        } else if (password.equals("")) {
             passwordP.setError("Required");
-        }
-        else if (numero.equals("")){
+        } else if (numero.equals("")) {
             passwordP.setError("Required");
         }
     }
@@ -96,8 +92,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                 if (nombre.equals("") || correo.equals("") || password.equals("") || app.equals("") || numero.equals("") || app.equals("")) {
                     validacion();
-                }
-                else {
+                } else {
 
                     databaseReference.child("Persona").addValueEventListener(new ValueEventListener() {
                         @Override
@@ -109,7 +104,7 @@ public class RegisterActivity extends AppCompatActivity {
                             String app1 = appP.getText().toString();
                             listCorreos.clear();
                             listNumeros.clear();
-                            for (DataSnapshot objSnaptshot : dataSnapshot.getChildren()){
+                            for (DataSnapshot objSnaptshot : dataSnapshot.getChildren()) {
                                 Persona p = objSnaptshot.getValue(Persona.class);
                                 listCorreos.add(p.getCorreo());
                                 listNumeros.add(p.getNumero());
@@ -119,23 +114,22 @@ public class RegisterActivity extends AppCompatActivity {
                             /*for (String src : listCorreos){ Log.d("correo es:", src);}
                             for (String src : listNumeros){ Log.d("numero es:", src);}*/
 
-                            if(listNumeros.contains(numero1) || listCorreos.contains(correo1)){
-                                if(listNumeros.contains(numero1)) {
+                            if (listNumeros.contains(numero1) || listCorreos.contains(correo1)) {
+                                if (listNumeros.contains(numero1)) {
                                     Log.d("tagsalida", "si entra");
                                     numP.setError("Numero existente");
-                                }
-                                else{
+                                } else {
                                     correoP.setError("Correo existente");
                                 }
 
 
-                            }else{
-                                if(numP.getText().toString().equals("") || correoP.getText().toString().equals("")){
+                            } else {
+                                if (numP.getText().toString().equals("") || correoP.getText().toString().equals("")) {
                                     //validacion();
                                     //listNumeros.clear();
                                     //listCorreos.clear();
                                     //limpiarCajas();
-                                }else{
+                                } else {
                                     Log.d("agregar", "agrego");
                                     Persona p = new Persona();
                                     //limpiarCajas();
@@ -178,7 +172,9 @@ public class RegisterActivity extends AppCompatActivity {
         }
 
     }
-    private void agregar(){
+
+    private void agregar() {
         Toast.makeText(this, "Agregado", Toast.LENGTH_LONG).show();
     }
 
+}

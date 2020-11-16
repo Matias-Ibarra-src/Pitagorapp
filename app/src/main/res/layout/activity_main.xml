@@ -4,18 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="@drawable/fondo">
+    android:background="@drawable/fondo"
+    tools:context=".MainActivity">
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="293dp"
         android:layout_height="251dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="104dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.212"
         app:srcCompat="@drawable/logo" />
 
     <Button
@@ -23,17 +22,15 @@
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="237dp"
         android:layout_height="71dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="72dp"
         android:backgroundTint="#F05F11"
         android:elevation="@android:dimen/thumbnail_height"
         android:text="@string/btn_start"
         android:textColor="#FFFFFF"
         android:textSize="36sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.164"
         tools:text="@string/btn_start" />
 
     <Button
@@ -41,17 +38,14 @@
         style="@style/Widget.AppCompat.Button.Borderless.Colored"
         android:layout_width="161dp"
         android:layout_height="57dp"
-        android:layout_marginBottom="160dp"
+        android:layout_marginTop="16dp"
         android:backgroundTint="#00FFCC"
         android:text='@string/btn_glossary'
         android:textColor="#000000"
         android:textStyle="bold|italic"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_Start"
-        app:layout_constraintVertical_bias="0.835" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_Start" />
 
     <Button
         android:id="@+id/btn_to_login"
