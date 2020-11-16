@@ -58,8 +58,9 @@ public class GlosarioInicioActivity extends AppCompatActivity {
                 startActivityForResult(intent, 0);
             }
         });
+
+
+
     }
-
-
 
 }

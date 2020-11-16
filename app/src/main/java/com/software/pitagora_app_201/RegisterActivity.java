@@ -25,7 +25,6 @@ public class RegisterActivity extends AppCompatActivity {
 
     public List<String> listCorreos = new ArrayList<String>();
     public List<String> listNumeros = new ArrayList<String>();
-    boolean[] flag;
     EditText nomP, appP, correoP, passwordP, numP;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
@@ -116,7 +115,6 @@ public class RegisterActivity extends AppCompatActivity {
 
                             if (listNumeros.contains(numero1) || listCorreos.contains(correo1)) {
                                 if (listNumeros.contains(numero1)) {
-                                    Log.d("tagsalida", "si entra");
                                     numP.setError("Numero existente");
                                 } else {
                                     correoP.setError("Correo existente");
@@ -125,20 +123,14 @@ public class RegisterActivity extends AppCompatActivity {
 
                             } else {
                                 if (numP.getText().toString().equals("") || correoP.getText().toString().equals("")) {
-                                    //validacion();
-                                    //listNumeros.clear();
-                                    //listCorreos.clear();
-                                    //limpiarCajas();
+                                    //comprueba que los datos aun existan en las cajas
                                 } else {
-                                    Log.d("agregar", "agrego");
                                     Persona p = new Persona();
-                                    //limpiarCajas();
                                     String nombr = nomP.getText().toString();
                                     String corre = correoP.getText().toString();
                                     String passwor = passwordP.getText().toString();
                                     String numer = numP.getText().toString();
                                     String ap = appP.getText().toString();
-
                                     p.setLocalid(UUID.randomUUID().toString());
                                     p.setNombre(nombr);
                                     p.setNumero(numer);
@@ -146,16 +138,10 @@ public class RegisterActivity extends AppCompatActivity {
                                     p.setPassword(passwor);
                                     p.setApellido(ap);
                                     databaseReference.child("Persona").child(p.getLocalid()).setValue(p);
-                                    //cargarDatosFirebase(nombre, apellido, telefono, direccion);
                                     agregar();
                                     limpiarCajas();
-                                    //listNumeros.clear();
-                                    //listCorreos.clear();
-
                                 }
                             }
-
-
                         }
 
                         @Override
@@ -163,7 +149,6 @@ public class RegisterActivity extends AppCompatActivity {
 
                         }
                     });
-                    //Toast.makeText(this, "Agregado", Toast.LENGTH_LONG).show();
                     break;
                 }
                 break;
