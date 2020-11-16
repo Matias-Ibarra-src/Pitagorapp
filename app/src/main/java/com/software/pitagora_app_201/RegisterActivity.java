@@ -3,6 +3,7 @@ package com.software.pitagora_app_201;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -126,6 +127,7 @@ public class RegisterActivity extends AppCompatActivity {
                                     //comprueba que los datos aun existan en las cajas
                                 } else {
                                     Persona p = new Persona();
+                                    List<String> listPreguntas = new ArrayList<String>();
                                     String nombr = nomP.getText().toString();
                                     String corre = correoP.getText().toString();
                                     String passwor = passwordP.getText().toString();
@@ -137,9 +139,17 @@ public class RegisterActivity extends AppCompatActivity {
                                     p.setCorreo(corre);
                                     p.setPassword(passwor);
                                     p.setApellido(ap);
+                                    p.setCorrectas_en_alg(0);
+                                    p.setCorrectas_en_geo(0);
+                                    p.setCorrectas_en_pro(0);
+                                    p.setCorrectas_en_num(0);
+                                    p.setPuntajeTotal(0);
+                                    //p.setListpreguntasContestadas(listPreguntas);
                                     databaseReference.child("Persona").child(p.getLocalid()).setValue(p);
                                     agregar();
                                     limpiarCajas();
+                                    Intent intent = new Intent(RegisterActivity.this,LoginActivity.class);
+                                    startActivity(intent);
                                 }
                             }
                         }

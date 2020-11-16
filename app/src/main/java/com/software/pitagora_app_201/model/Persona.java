@@ -1,9 +1,10 @@
 package com.software.pitagora_app_201.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Persona {
+public class Persona implements Serializable {
     private String Localid;
     private String Nombre;
     private String Apellido;
@@ -18,7 +19,7 @@ public class Persona {
     private Integer correctas_en_num;
 
     private Integer puntajeTotal;
-    private List<String> listpreguntasContestadas = new ArrayList<String>();
+    //private List<String> listpreguntasContestadas = new ArrayList<String>();
 
 
     public Persona() {
@@ -77,13 +78,13 @@ public class Persona {
         return Nombre;
     }
 
-    public List<String> getListpreguntasContestadas() {
+    /*public List<String> getListpreguntasContestadas() {
         return listpreguntasContestadas;
     }
 
     public void setListpreguntasContestadas(List<String> listpreguntasContestadas) {
         this.listpreguntasContestadas = listpreguntasContestadas;
-    }
+    }*/
 
     public Integer getPuntajeTotal() {
         return puntajeTotal;
