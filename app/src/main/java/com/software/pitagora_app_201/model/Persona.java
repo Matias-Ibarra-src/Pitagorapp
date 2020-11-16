@@ -13,12 +13,53 @@ public class Persona implements Serializable {
     private String Password;
 
     //preguntas correctas por nivel
-    private Integer correctas_en_geo;
-    private Integer correctas_en_alg;
-    private Integer correctas_en_pro;
-    private Integer correctas_en_num;
+    private String correctas_en_geo;
+    private String correctas_en_alg;
 
-    private Integer puntajeTotal;
+    public String getCorrectas_en_geo() {
+        return correctas_en_geo;
+    }
+
+    public void setCorrectas_en_geo(String correctas_en_geo) {
+        this.correctas_en_geo = correctas_en_geo;
+    }
+
+    public String getCorrectas_en_alg() {
+        return correctas_en_alg;
+    }
+
+    public void setCorrectas_en_alg(String correctas_en_alg) {
+        this.correctas_en_alg = correctas_en_alg;
+    }
+
+    public String getCorrectas_en_pro() {
+        return correctas_en_pro;
+    }
+
+    public void setCorrectas_en_pro(String correctas_en_pro) {
+        this.correctas_en_pro = correctas_en_pro;
+    }
+
+    public String getCorrectas_en_num() {
+        return correctas_en_num;
+    }
+
+    public void setCorrectas_en_num(String correctas_en_num) {
+        this.correctas_en_num = correctas_en_num;
+    }
+
+    public String getPuntajeTotal() {
+        return puntajeTotal;
+    }
+
+    public void setPuntajeTotal(String puntajeTotal) {
+        this.puntajeTotal = puntajeTotal;
+    }
+
+    private String correctas_en_pro;
+    private String correctas_en_num;
+
+    private String puntajeTotal;
     //private List<String> listpreguntasContestadas = new ArrayList<String>();
 
 
@@ -86,43 +127,5 @@ public class Persona implements Serializable {
         this.listpreguntasContestadas = listpreguntasContestadas;
     }*/
 
-    public Integer getPuntajeTotal() {
-        return puntajeTotal;
-    }
 
-    public void setPuntajeTotal(Integer puntajeTotal) {
-        this.puntajeTotal = puntajeTotal;
-    }
-
-    public Integer getCorrectas_en_geo() {
-        return correctas_en_geo;
-    }
-
-    public void setCorrectas_en_geo(Integer correctas_en_geo) {
-        this.correctas_en_geo = correctas_en_geo;
-    }
-
-    public Integer getCorrectas_en_alg() {
-        return correctas_en_alg;
-    }
-
-    public void setCorrectas_en_alg(Integer correctas_en_alg) {
-        this.correctas_en_alg = correctas_en_alg;
-    }
-
-    public Integer getCorrectas_en_pro() {
-        return correctas_en_pro;
-    }
-
-    public void setCorrectas_en_pro(Integer correctas_en_pro) {
-        this.correctas_en_pro = correctas_en_pro;
-    }
-
-    public Integer getCorrectas_en_num() {
-        return correctas_en_num;
-    }
-
-    public void setCorrectas_en_num(Integer correctas_en_num) {
-        this.correctas_en_num = correctas_en_num;
-    }
 }

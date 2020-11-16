@@ -139,11 +139,11 @@ public class RegisterActivity extends AppCompatActivity {
                                     p.setCorreo(corre);
                                     p.setPassword(passwor);
                                     p.setApellido(ap);
-                                    p.setCorrectas_en_alg(0);
-                                    p.setCorrectas_en_geo(0);
-                                    p.setCorrectas_en_pro(0);
-                                    p.setCorrectas_en_num(0);
-                                    p.setPuntajeTotal(0);
+                                    p.setCorrectas_en_alg("0");
+                                    p.setCorrectas_en_geo("0");
+                                    p.setCorrectas_en_pro("0");
+                                    p.setCorrectas_en_num("0");
+                                    p.setPuntajeTotal("0");
                                     //p.setListpreguntasContestadas(listPreguntas);
                                     databaseReference.child("Persona").child(p.getLocalid()).setValue(p);
                                     agregar();

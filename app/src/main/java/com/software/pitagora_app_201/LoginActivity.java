@@ -108,8 +108,8 @@ public class LoginActivity extends AppCompatActivity {
                                             limpiarCajas();
                                             bienvenido();
 
-                                            Intent intent = new Intent(LoginActivity.this,MainActivity.class);
-                                            //intent.putExtra("usuario",(Serializable) str);
+                                            Intent intent = new Intent(LoginActivity.this,MainDespuesDeLoginActivity.class);
+                                            intent.putExtra("usuario",(Serializable) str);
                                             startActivity(intent);
 
 
