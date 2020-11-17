@@ -66,6 +66,7 @@ public class SelectorNivelActivity extends AppCompatActivity {
                 Persona usuario = (Persona) getIntent().getSerializableExtra("usuario");
                 Intent intent = new Intent (v.getContext(), SelectorPreguntaActivity.class);
                 intent.putExtra("usuario", usuario);
+                intent.putExtra("Correctas",usuario.getCorrectas_en_geo());
                 intent.putExtra("id",contenido4);
                 startActivityForResult(intent, 0);
                 break;
@@ -77,6 +78,7 @@ public class SelectorNivelActivity extends AppCompatActivity {
                 if(usuario.getCorrectas_en_geo() > 5){
                     Intent intent = new Intent (v.getContext(), SelectorPreguntaActivity.class);
                     intent.putExtra("usuario", usuario);
+                    intent.putExtra("Correctas",usuario.getCorrectas_en_num());
                     intent.putExtra("id",contenido1);
                     startActivityForResult(intent, 0);
                 }else{
@@ -91,6 +93,7 @@ public class SelectorNivelActivity extends AppCompatActivity {
                 if((usuario.getCorrectas_en_geo()+usuario.getCorrectas_en_num())>15){
                     Intent intent = new Intent (v.getContext(), SelectorPreguntaActivity.class);
                     intent.putExtra("usuario", usuario);
+                    intent.putExtra("Correctas",usuario.getCorrectas_en_alg());
                     intent.putExtra("id",contenido3);
                     startActivityForResult(intent, 0);
                 }else{
@@ -104,6 +107,7 @@ public class SelectorNivelActivity extends AppCompatActivity {
 
                 if((usuario.getCorrectas_en_geo()+usuario.getCorrectas_en_alg()+usuario.getCorrectas_en_num())>30){
                     Intent intent = new Intent (v.getContext(), SelectorPreguntaActivity.class);
+                    intent.putExtra("Correctas",usuario.getCorrectas_en_pro());
                     intent.putExtra("usuario", usuario);
                     intent.putExtra("id",contenido2);
                     startActivityForResult(intent, 0);

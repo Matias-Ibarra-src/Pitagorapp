@@ -2,6 +2,8 @@
   <dictionary name="matias">
     <words>
       <w>agregado</w>
+      <w>boton</w>
+      <w>botones</w>
       <w>cajas</w>
       <w>cambiado</w>
       <w>cambiar</w>
@@ -32,6 +34,7 @@
       <w>recuperar</w>
       <w>registro</w>
       <w>respuesta</w>
+      <w>setiar</w>
       <w>snaptshot</w>
       <w>tienda</w>
       <w>usuario</w>
