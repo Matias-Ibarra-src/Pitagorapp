@@ -79,7 +79,9 @@ public class RegisterActivity extends AppCompatActivity {
         } else if (password.equals("")) {
             passwordP.setError("Required");
         } else if (numero.equals("")) {
-            passwordP.setError("Required");
+            numP.setError("Required");
+        } else if(usuario.equals("")){
+            nombre_usuario.setError("Required");
         }
     }
 
@@ -95,7 +97,7 @@ public class RegisterActivity extends AppCompatActivity {
 
             case R.id.btn_register: {
 
-                if (nombre.equals("") || correo.equals("") || password.equals("") || app.equals("") || numero.equals("") || app.equals("")) {
+                if (nombre.equals("") || correo.equals("") || password.equals("") || Nombre_usuario.equals("") || numero.equals("") || app.equals("")) {
                     validacion();
                 } else {
 

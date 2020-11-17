@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CambioContraDesdePerfilActivity"
-    android:background="@drawable/fondo">
+    android:background="@drawable/fondo"
+    tools:context=".CambioContraDesdePerfilActivity">
 
     <ImageView
         android:id="@+id/imageView"
@@ -16,13 +16,13 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo"/>
+        app:srcCompat="@drawable/logo" />
 
     <EditText
-        android:id="@+id/text_contraseña_recuperar"
+        android:id="@+id/text_contra_cambiar_confirmar"
         android:layout_width="347dp"
         android:layout_height="56dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="@string/confirmar"
         android:inputType="textPersonName"
@@ -30,13 +30,13 @@
         android:textColorHint="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_contraseña_recuperar_confirmar" />
+        app:layout_constraintTop_toBottomOf="@+id/text_contra_cambiar" />
 
     <EditText
         android:id="@+id/text_contra_antigua"
         android:layout_width="347dp"
         android:layout_height="56dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="44dp"
         android:ems="10"
         android:hint="Contraseña Anterior"
         android:inputType="textPersonName"
@@ -47,10 +47,10 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <EditText
-        android:id="@+id/text_contraseña_recuperar_confirmar"
+        android:id="@+id/text_contra_cambiar"
         android:layout_width="347dp"
         android:layout_height="56dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="@string/password"
         android:inputType="textPersonName"
@@ -61,14 +61,15 @@
         app:layout_constraintTop_toBottomOf="@+id/text_contra_antigua" />
 
     <Button
-        android:id="@+id/btn_cambiar_contra"
+        android:id="@+id/btn_cambiar_contra_desde_perfil"
         android:layout_width="249dp"
+        android:onClick="onClick"
         android:layout_height="74dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="52dp"
         android:backgroundTint="#39CA11"
         android:text="@string/btn_cambiar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_contraseña_recuperar" />
+        app:layout_constraintTop_toBottomOf="@+id/text_contra_cambiar_confirmar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

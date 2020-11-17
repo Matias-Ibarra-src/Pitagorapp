@@ -55,13 +55,13 @@ public class SubcategoriasScreenGlosarioActivity extends AppCompatActivity {
 
         recogerExtras();
 
-        Button btn_salir = (Button) findViewById(R.id.btn_back_probabilidad);
+        Button btn_salir = (Button) findViewById(R.id.btn_back_tarjeta);
 
         btn_salir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent (v.getContext(), MainDespuesDeLoginActivity.class);
-                startActivityForResult(intent, 0);
+                Intent intent = new Intent (SubcategoriasScreenGlosarioActivity.this, MainDespuesDeLoginActivity.class);
+                startActivity(intent);
             }
         });
 

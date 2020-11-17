@@ -81,9 +81,10 @@
             android:textColorHint="#FFFFFF" />
 
         <Button
-            android:id="@+id/btn_cambiar_contra"
+            android:id="@+id/btn_cambiar_perfil"
             android:layout_width="249dp"
             android:layout_height="74dp"
+            android:onClick="onClick"
             android:layout_marginHorizontal="47dp"
             android:layout_marginTop="25dp"
             android:backgroundTint="#39CA11"

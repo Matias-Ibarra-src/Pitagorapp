@@ -27,8 +27,8 @@ public class GlosarioScreenCategoriaActivity extends AppCompatActivity {
         btn_salir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent (v.getContext(), MainDespuesDeLoginActivity.class);
-                startActivityForResult(intent, 0);
+                Intent intent = new Intent (GlosarioScreenCategoriaActivity.this, MainDespuesDeLoginActivity.class);
+                startActivity(intent);
             }
         });
     }
