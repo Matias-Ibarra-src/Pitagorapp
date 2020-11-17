@@ -26,7 +26,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     public List<String> listCorreos = new ArrayList<String>();
     public List<String> listNumeros = new ArrayList<String>();
-    EditText nomP, appP, correoP, passwordP, numP;
+    EditText nomP, appP, correoP, passwordP, numP, nombre_usuario;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
 
@@ -38,6 +38,7 @@ public class RegisterActivity extends AppCompatActivity {
         nomP = findViewById(R.id.text_Nombre);
         appP = findViewById(R.id.text_Apellido);
         numP = findViewById(R.id.text_Numero);
+        nombre_usuario = findViewById(R.id.text_Nombre_de_usuario);
         correoP = findViewById(R.id.text_correo_registro);
         passwordP = findViewById(R.id.text_contraseña_registro);
 
@@ -57,6 +58,7 @@ public class RegisterActivity extends AppCompatActivity {
         correoP.setText("");
         passwordP.setText("");
         numP.setText("");
+        nombre_usuario.setText("");
         appP.setText("");
     }
 
@@ -66,6 +68,8 @@ public class RegisterActivity extends AppCompatActivity {
         String password = passwordP.getText().toString();
         String app = appP.getText().toString();
         String numero = numP.getText().toString();
+        String usuario = nombre_usuario.getText().toString();
+
         if (nombre.equals("")) {
             nomP.setError("Required");
         } else if (app.equals("")) {
@@ -86,6 +90,7 @@ public class RegisterActivity extends AppCompatActivity {
         String password = passwordP.getText().toString();
         String numero = numP.getText().toString();
         String app = appP.getText().toString();
+        String Nombre_usuario = nombre_usuario.getText().toString();
         switch (v.getId()) {
 
             case R.id.btn_register: {
@@ -133,17 +138,20 @@ public class RegisterActivity extends AppCompatActivity {
                                     String passwor = passwordP.getText().toString();
                                     String numer = numP.getText().toString();
                                     String ap = appP.getText().toString();
+                                    String Nombre_usuario = nombre_usuario.getText().toString();
+
                                     p.setLocalid(UUID.randomUUID().toString());
                                     p.setNombre(nombr);
                                     p.setNumero(numer);
                                     p.setCorreo(corre);
                                     p.setPassword(passwor);
                                     p.setApellido(ap);
-                                    p.setCorrectas_en_alg("0");
-                                    p.setCorrectas_en_geo("0");
-                                    p.setCorrectas_en_pro("0");
-                                    p.setCorrectas_en_num("0");
-                                    p.setPuntajeTotal("0");
+                                    p.setNombre_usuario(Nombre_usuario);
+                                    p.setCorrectas_en_alg(0);
+                                    p.setCorrectas_en_geo(0);
+                                    p.setCorrectas_en_pro(0);
+                                    p.setCorrectas_en_num(0);
+                                    p.setPuntajeTotal(0);
                                     //p.setListpreguntasContestadas(listPreguntas);
                                     databaseReference.child("Persona").child(p.getLocalid()).setValue(p);
                                     agregar();

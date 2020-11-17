@@ -60,7 +60,7 @@ public class SubcategoriasScreenGlosarioActivity extends AppCompatActivity {
         btn_salir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent (v.getContext(), MainActivity.class);
+                Intent intent = new Intent (v.getContext(), MainDespuesDeLoginActivity.class);
                 startActivityForResult(intent, 0);
             }
         });

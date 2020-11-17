@@ -6,6 +6,7 @@ import java.util.List;
 
 public class Persona implements Serializable {
     private String Localid;
+    private String Nombre_usuario;
     private String Nombre;
     private String Apellido;
     private String Numero;
@@ -13,53 +14,52 @@ public class Persona implements Serializable {
     private String Password;
 
     //preguntas correctas por nivel
-    private int correctas_en_geo;
-    private int correctas_en_alg;
+    private Integer correctas_en_geo;
+    private Integer correctas_en_alg;
+    private Integer correctas_en_pro;
+    private Integer correctas_en_num;
 
-    public int getCorrectas_en_geo() {
+    private Integer puntajeTotal;
+
+    public Integer getCorrectas_en_geo() {
         return correctas_en_geo;
     }
 
-    public void setCorrectas_en_geo(int correctas_en_geo) {
+    public void setCorrectas_en_geo(Integer correctas_en_geo) {
         this.correctas_en_geo = correctas_en_geo;
     }
 
-    public int getCorrectas_en_alg() {
+    public Integer getCorrectas_en_alg() {
         return correctas_en_alg;
     }
 
-    public void setCorrectas_en_alg(int correctas_en_alg) {
+    public void setCorrectas_en_alg(Integer correctas_en_alg) {
         this.correctas_en_alg = correctas_en_alg;
     }
 
-    public int getCorrectas_en_pro() {
+    public Integer getCorrectas_en_pro() {
         return correctas_en_pro;
     }
 
-    public void setCorrectas_en_pro(int correctas_en_pro) {
+    public void setCorrectas_en_pro(Integer correctas_en_pro) {
         this.correctas_en_pro = correctas_en_pro;
     }
 
-    public int getCorrectas_en_num() {
+    public Integer getCorrectas_en_num() {
         return correctas_en_num;
     }
 
-    public void setCorrectas_en_num(int correctas_en_num) {
+    public void setCorrectas_en_num(Integer correctas_en_num) {
         this.correctas_en_num = correctas_en_num;
     }
 
-    public int getPuntajeTotal() {
+    public Integer getPuntajeTotal() {
         return puntajeTotal;
     }
 
-    public void setPuntajeTotal(int puntajeTotal) {
+    public void setPuntajeTotal(Integer puntajeTotal) {
         this.puntajeTotal = puntajeTotal;
     }
-
-    private int correctas_en_pro;
-    private int correctas_en_num;
-
-    private int puntajeTotal;
 
     public Persona() {
     }
@@ -117,7 +117,11 @@ public class Persona implements Serializable {
         return Nombre;
     }
 
+    public String getNombre_usuario() {
+        return Nombre_usuario;
+    }
 
-
-
+    public void setNombre_usuario(String nombre_usuario) {
+        Nombre_usuario = nombre_usuario;
+    }
 }

@@ -22,12 +22,32 @@ TextView puntaje;
         setContentView(R.layout.main_despues_de_login);
         Button btn_start = (Button) findViewById(R.id.btn_Start_after);
         Button btn_glosario = (Button) findViewById(R.id.btn_glosary_after);
+        Button btn_tienda = (Button) findViewById(R.id.btn_tienda);
+        Button btn_perfil = (Button) findViewById(R.id.icono);
 
         nombre= (TextView) findViewById(R.id.text_nombre_usuario);
         puntaje= (TextView) findViewById(R.id.text_puntaje);
         Persona  usuarioLog = (Persona) getIntent().getSerializableExtra("usuario");
         nombre.setText(usuarioLog.getNombre());
-        puntaje.setText(String.format("%d",usuarioLog.getPuntajeTotal()));
+        puntaje.setText((String.format("%d",usuarioLog.getPuntajeTotal()))+"  puntos");
+
+        btn_tienda.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent (v.getContext(), TiendaActivity.class);
+                intent.putExtra("usuario", usuarioLog);
+                startActivityForResult(intent, 0);
+            }
+        });
+
+        btn_perfil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent (v.getContext(), PerfilActivity.class);
+                intent.putExtra("usuario", usuarioLog);
+                startActivityForResult(intent, 0);
+            }
+        });
 
         btn_start.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DataSnapshot;
@@ -19,6 +20,7 @@ import com.software.pitagora_app_201.model.Persona;
 import com.software.pitagora_app_201.model.Pregunta;
 
 public class SelectorNivelActivity extends AppCompatActivity {
+
 
     String contenido1="Numeros";
     String contenido2="Geometria";
@@ -37,6 +39,17 @@ public class SelectorNivelActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.selector_nivel);
         inicializarFirebase();
+
+        Button btn_geo = (Button) findViewById(R.id.btn_geometria_selector);
+        Button btn_alg = (Button) findViewById(R.id.btn_algebra_selector);
+        Button btn_pro = (Button) findViewById(R.id.btn_probabilidad_selector);
+        Button btn_num = (Button) findViewById(R.id.btn_numeros_selector);
+
+        Persona P = (Persona) getIntent().getSerializableExtra("usuario");
+        btn_geo.setText("Geometria "+String.format("%d",P.getCorrectas_en_geo())+"/20");
+        btn_num.setText("Numeros "+String.format("%d",P.getCorrectas_en_num())+"/20");
+        btn_alg.setText("Algebra "+String.format("%d",P.getCorrectas_en_alg())+"/20");
+        btn_pro.setText("Probabilidad "+String.format("%d",P.getCorrectas_en_pro())+"/20");
     }
 
     private void inicializarFirebase() {
@@ -49,45 +62,69 @@ public class SelectorNivelActivity extends AppCompatActivity {
 
         switch (v.getId()) {
 
-            case R.id.btn_algebra_selector: {
-                Persona usuario = (Persona) getIntent().getSerializableExtra("usuario");
-                Intent intent = new Intent (v.getContext(), SelectorPreguntaActivity.class);
-                intent.putExtra("usuario", usuario);
-                intent.putExtra("id",contenido3);
-                startActivityForResult(intent, 0);
-            }
-
             case R.id.btn_geometria_selector:{
                 Persona usuario = (Persona) getIntent().getSerializableExtra("usuario");
                 Intent intent = new Intent (v.getContext(), SelectorPreguntaActivity.class);
                 intent.putExtra("usuario", usuario);
                 intent.putExtra("id",contenido4);
                 startActivityForResult(intent, 0);
-            }
-
-            case R.id.btn_probabilidad_selector:{
-                Persona usuario = (Persona) getIntent().getSerializableExtra("usuario");
-                Intent intent = new Intent (v.getContext(), SelectorPreguntaActivity.class);
-                intent.putExtra("usuario", usuario);
-                intent.putExtra("id",contenido2);
-                startActivityForResult(intent, 0);
+                break;
             }
 
             case R.id.btn_numeros_selector:{
                 Persona usuario = (Persona) getIntent().getSerializableExtra("usuario");
-                Intent intent = new Intent (v.getContext(), SelectorPreguntaActivity.class);
-                intent.putExtra("usuario", usuario);
-                intent.putExtra("id",contenido1);
-                startActivityForResult(intent, 0);
+
+                if(usuario.getCorrectas_en_geo() > 5){
+                    Intent intent = new Intent (v.getContext(), SelectorPreguntaActivity.class);
+                    intent.putExtra("usuario", usuario);
+                    intent.putExtra("id",contenido1);
+                    startActivityForResult(intent, 0);
+                }else{
+                    Toast.makeText(this, "Nivel Bloqueado", Toast.LENGTH_LONG).show();
+                }
+                break;
             }
 
+            case R.id.btn_algebra_selector: {
+                Persona usuario = (Persona) getIntent().getSerializableExtra("usuario");
+
+                if((usuario.getCorrectas_en_geo()+usuario.getCorrectas_en_num())>15){
+                    Intent intent = new Intent (v.getContext(), SelectorPreguntaActivity.class);
+                    intent.putExtra("usuario", usuario);
+                    intent.putExtra("id",contenido3);
+                    startActivityForResult(intent, 0);
+                }else{
+                    Toast.makeText(this, "Nivel Bloqueado", Toast.LENGTH_LONG).show();
+                }
+                break;
+            }
+
+            case R.id.btn_probabilidad_selector:{
+                Persona usuario = (Persona) getIntent().getSerializableExtra("usuario");
+
+                if((usuario.getCorrectas_en_geo()+usuario.getCorrectas_en_alg()+usuario.getCorrectas_en_num())>30){
+                    Intent intent = new Intent (v.getContext(), SelectorPreguntaActivity.class);
+                    intent.putExtra("usuario", usuario);
+                    intent.putExtra("id",contenido2);
+                    startActivityForResult(intent, 0);
+                }else{
+                    Toast.makeText(this, "Nivel Bloqueado", Toast.LENGTH_LONG).show();
+                }
+                break;
+            }
+
+            case R.id.btn_random_selector:{
+                Persona usuario = (Persona) getIntent().getSerializableExtra("usuario");
+
+                if((usuario.getCorrectas_en_geo()+usuario.getCorrectas_en_alg()+usuario.getCorrectas_en_num()+usuario.getCorrectas_en_pro())>50){
+                    Intent intent = new Intent (v.getContext(), PreguntaScreenActivity.class);
+                    intent.putExtra("usuario", usuario);
+                    startActivityForResult(intent, 0);
+                }else{
+                    Toast.makeText(this, "Random Bloqueado", Toast.LENGTH_LONG).show();
+                }
+                break;
+            }
         }
     }
-
-    public boolean comprobar(Persona p){
-        if( > 10){
-
-        }
-    }
-
 }

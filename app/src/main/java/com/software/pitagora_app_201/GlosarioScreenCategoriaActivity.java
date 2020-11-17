@@ -2,7 +2,10 @@ package com.software.pitagora_app_201;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class GlosarioScreenCategoriaActivity extends AppCompatActivity {
@@ -18,6 +21,16 @@ public class GlosarioScreenCategoriaActivity extends AppCompatActivity {
         titulo = (TextView) findViewById(R.id.titulo_selccionado);
         contenido = (TextView) findViewById(R.id.text_text);
         recogerExtras();
+
+        Button btn_salir = (Button) findViewById(R.id.btn_back_selector_glosario);
+
+        btn_salir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent (v.getContext(), MainDespuesDeLoginActivity.class);
+                startActivityForResult(intent, 0);
+            }
+        });
     }
     public void recogerExtras() {
         //Aquí recogemos y tratamos los parámetros

@@ -4,18 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondo"
-    tools:context=".CambioContraActivity">
+    tools:context=".CambioContraDesdePerfilActivity"
+    android:background="@drawable/fondo">
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="183dp"
-        android:layout_height="77dp"
-        android:layout_marginTop="68dp"
+        android:layout_width="194dp"
+        android:layout_height="89dp"
+        android:layout_marginTop="56dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo" />
+        app:srcCompat="@drawable/logo"/>
 
     <EditText
         android:id="@+id/text_contraseña_recuperar"
@@ -32,12 +33,12 @@
         app:layout_constraintTop_toBottomOf="@+id/text_contraseña_recuperar_confirmar" />
 
     <EditText
-        android:id="@+id/text_codigo"
+        android:id="@+id/text_contra_antigua"
         android:layout_width="347dp"
         android:layout_height="56dp"
         android:layout_marginTop="40dp"
         android:ems="10"
-        android:hint="@string/codigo"
+        android:hint="Contraseña Anterior"
         android:inputType="textPersonName"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
@@ -57,18 +58,17 @@
         android:textColorHint="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_codigo" />
+        app:layout_constraintTop_toBottomOf="@+id/text_contra_antigua" />
 
     <Button
         android:id="@+id/btn_cambiar_contra"
         android:layout_width="249dp"
         android:layout_height="74dp"
         android:layout_marginTop="40dp"
+        android:backgroundTint="#39CA11"
         android:text="@string/btn_cambiar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:backgroundTint="#39CA11"
         app:layout_constraintTop_toBottomOf="@+id/text_contraseña_recuperar" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
