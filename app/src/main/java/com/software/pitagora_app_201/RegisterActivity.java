@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -21,6 +22,7 @@ import com.software.pitagora_app_201.model.Persona;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
+import java.util.regex.Pattern;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -133,33 +135,38 @@ public class RegisterActivity extends AppCompatActivity {
                                 if (numP.getText().toString().equals("") || correoP.getText().toString().equals("")) {
                                     //comprueba que los datos aun existan en las cajas
                                 } else {
-                                    Persona p = new Persona();
-                                    List<String> listPreguntas = new ArrayList<String>();
-                                    String nombr = nomP.getText().toString();
-                                    String corre = correoP.getText().toString();
-                                    String passwor = passwordP.getText().toString();
-                                    String numer = numP.getText().toString();
-                                    String ap = appP.getText().toString();
-                                    String Nombre_usuario = nombre_usuario.getText().toString();
+                                    if (!validarEmail(correo1)){
+                                        correoP.setError("Email no válido");
+                                    }
+                                    else {
+                                        Persona p = new Persona();
+                                        List<String> listPreguntas = new ArrayList<String>();
+                                        String nombr = nomP.getText().toString();
+                                        String corre = correoP.getText().toString();
+                                        String passwor = passwordP.getText().toString();
+                                        String numer = numP.getText().toString();
+                                        String ap = appP.getText().toString();
+                                        String Nombre_usuario = nombre_usuario.getText().toString();
 
-                                    p.setLocalid(UUID.randomUUID().toString());
-                                    p.setNombre(nombr);
-                                    p.setNumero(numer);
-                                    p.setCorreo(corre);
-                                    p.setPassword(passwor);
-                                    p.setApellido(ap);
-                                    p.setNombre_usuario(Nombre_usuario);
-                                    p.setCorrectas_en_alg(0);
-                                    p.setCorrectas_en_geo(0);
-                                    p.setCorrectas_en_pro(0);
-                                    p.setCorrectas_en_num(0);
-                                    p.setPuntajeTotal(0);
-                                    //p.setListpreguntasContestadas(listPreguntas);
-                                    databaseReference.child("Persona").child(p.getLocalid()).setValue(p);
-                                    agregar();
-                                    limpiarCajas();
-                                    Intent intent = new Intent(RegisterActivity.this,MainActivity.class);
-                                    startActivity(intent);
+                                        p.setLocalid(UUID.randomUUID().toString());
+                                        p.setNombre(nombr);
+                                        p.setNumero(numer);
+                                        p.setCorreo(corre);
+                                        p.setPassword(passwor);
+                                        p.setApellido(ap);
+                                        p.setNombre_usuario(Nombre_usuario);
+                                        p.setCorrectas_en_alg(0);
+                                        p.setCorrectas_en_geo(0);
+                                        p.setCorrectas_en_pro(0);
+                                        p.setCorrectas_en_num(0);
+                                        p.setPuntajeTotal(0);
+                                        //p.setListpreguntasContestadas(listPreguntas);
+                                        databaseReference.child("Persona").child(p.getLocalid()).setValue(p);
+                                        agregar();
+                                        limpiarCajas();
+                                        Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
+                                        startActivity(intent);
+                                    }
                                 }
                             }
                         }
@@ -176,6 +183,11 @@ public class RegisterActivity extends AppCompatActivity {
 
         }
 
+    }
+
+    private boolean validarEmail(String email) {
+        Pattern pattern = Patterns.EMAIL_ADDRESS;
+        return pattern.matcher(email).matches();
     }
 
     private void agregar() {

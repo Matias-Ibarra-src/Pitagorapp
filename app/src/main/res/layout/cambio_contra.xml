@@ -65,6 +65,7 @@
         android:layout_height="74dp"
         android:layout_marginTop="40dp"
         android:text="@string/btn_cambiar"
+        android:onClick="onClick"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:backgroundTint="#39CA11"
