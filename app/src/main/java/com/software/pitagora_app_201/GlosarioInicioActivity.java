@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.software.pitagora_app_201.model.Persona;
+
 public class GlosarioInicioActivity extends AppCompatActivity {
 
     String contenido1="Numeros";
@@ -17,7 +19,7 @@ public class GlosarioInicioActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.glosario_inicio);
-
+        Persona usuarioLog = (Persona) getIntent().getSerializableExtra("usuario");
         Button btn_1 = (Button) findViewById(R.id.btn_numeros);
         Button btn_2 = (Button) findViewById(R.id.btn_geometria);
         Button btn_3 = (Button) findViewById(R.id.btn_algebra);
@@ -28,6 +30,7 @@ public class GlosarioInicioActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent (v.getContext(), SubcategoriasScreenGlosarioActivity.class);
                 intent.putExtra("id",contenido1);
+                intent.putExtra("usuario", usuarioLog);
                 startActivityForResult(intent, 0);
             }
         });
@@ -36,6 +39,7 @@ public class GlosarioInicioActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent (v.getContext(), SubcategoriasScreenGlosarioActivity.class);
+                intent.putExtra("usuario", usuarioLog);
                 intent.putExtra("id",contenido2);
                 startActivityForResult(intent, 0);
             }
@@ -45,6 +49,7 @@ public class GlosarioInicioActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent (v.getContext(), SubcategoriasScreenGlosarioActivity.class);
+                intent.putExtra("usuario", usuarioLog);
                 intent.putExtra("id",contenido3);
                 startActivityForResult(intent, 0);
             }
@@ -54,6 +59,7 @@ public class GlosarioInicioActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent (v.getContext(), SubcategoriasScreenGlosarioActivity.class);
+                intent.putExtra("usuario", usuarioLog);
                 intent.putExtra("id",contenido4);
                 startActivityForResult(intent, 0);
             }

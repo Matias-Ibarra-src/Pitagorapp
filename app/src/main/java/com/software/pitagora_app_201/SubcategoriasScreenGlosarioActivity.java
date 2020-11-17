@@ -20,6 +20,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.software.pitagora_app_201.model.Glossary;
+import com.software.pitagora_app_201.model.Persona;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,16 +29,10 @@ public class SubcategoriasScreenGlosarioActivity extends AppCompatActivity {
 
     String texto;
     TextView titulo;
-    /*@Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.subcategorias_screen_glosario);
 
-    }*/
     private List<Glossary> listGlossary = new ArrayList<Glossary>();
     ArrayAdapter<Glossary> arrayAdapterGlossary;
 
-    //EditText nomP, appP,correoP,passwordP;
     ListView listV_glossary;
     String x,y;
     FirebaseDatabase firebaseDatabase;
@@ -52,7 +47,7 @@ public class SubcategoriasScreenGlosarioActivity extends AppCompatActivity {
         setContentView(R.layout.subcategorias_screen_glosario);
 
         titulo = findViewById(R.id.select);
-
+        Persona usuarioLog = (Persona) getIntent().getSerializableExtra("usuario");
         recogerExtras();
 
         Button btn_salir = (Button) findViewById(R.id.btn_back_tarjeta);
@@ -61,6 +56,7 @@ public class SubcategoriasScreenGlosarioActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent (SubcategoriasScreenGlosarioActivity.this, MainDespuesDeLoginActivity.class);
+                intent.putExtra("usuario", usuarioLog);
                 startActivity(intent);
             }
         });
@@ -75,6 +71,7 @@ public class SubcategoriasScreenGlosarioActivity extends AppCompatActivity {
                 x=glossarySelected.getContenido();
                 y=glossarySelected.getCategoria();
                 Intent glossarySelected = new Intent(SubcategoriasScreenGlosarioActivity.this,GlosarioScreenCategoriaActivity.class);
+                glossarySelected.putExtra("usuario", usuarioLog);
                 glossarySelected.putExtra("dato1",x);
                 glossarySelected.putExtra("dato2",y);
                 startActivity(glossarySelected);
@@ -82,6 +79,7 @@ public class SubcategoriasScreenGlosarioActivity extends AppCompatActivity {
         });
 
     }
+
     public void recogerExtras() {
         //Aquí recogemos y tratamos los parámetros
         Bundle extras= getIntent().getExtras();
@@ -111,6 +109,7 @@ public class SubcategoriasScreenGlosarioActivity extends AppCompatActivity {
             }
         });
     }
+
     private void inicializarFirebase() {
         FirebaseApp.initializeApp(this);
         firebaseDatabase = FirebaseDatabase.getInstance();

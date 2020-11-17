@@ -62,6 +62,7 @@ TextView puntaje;
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent (v.getContext(), GlosarioInicioActivity.class);
+                intent.putExtra("usuario", usuarioLog);
                 startActivityForResult(intent, 0);
             }
         });
