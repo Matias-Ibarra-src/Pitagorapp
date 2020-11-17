@@ -67,7 +67,7 @@ public class SelectorNivelActivity extends AppCompatActivity {
                 Intent intent = new Intent (v.getContext(), SelectorPreguntaActivity.class);
                 intent.putExtra("usuario", usuario);
                 intent.putExtra("Correctas",usuario.getCorrectas_en_geo());
-                intent.putExtra("id",contenido4);
+                intent.putExtra("id",contenido2);
                 startActivityForResult(intent, 0);
                 break;
             }
@@ -109,7 +109,7 @@ public class SelectorNivelActivity extends AppCompatActivity {
                     Intent intent = new Intent (v.getContext(), SelectorPreguntaActivity.class);
                     intent.putExtra("Correctas",usuario.getCorrectas_en_pro());
                     intent.putExtra("usuario", usuario);
-                    intent.putExtra("id",contenido2);
+                    intent.putExtra("id",contenido4);
                     startActivityForResult(intent, 0);
                 }else{
                     Toast.makeText(this, "Nivel Bloqueado", Toast.LENGTH_LONG).show();

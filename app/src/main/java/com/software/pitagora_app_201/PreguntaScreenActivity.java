@@ -7,8 +7,18 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class PreguntaScreenActivity extends AppCompatActivity {
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.software.pitagora_app_201.model.Pregunta;
 
+import java.util.ArrayList;
+import java.util.List;
+
+public class PreguntaScreenActivity extends AppCompatActivity {
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference databaseReference;
+    public List<Pregunta> lista_Preguntas = new ArrayList<Pregunta>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -16,6 +26,8 @@ public class PreguntaScreenActivity extends AppCompatActivity {
 
         Button btn_salir = (Button) findViewById(R.id.btn_quit_pregunta);
         Button btn_glosario = (Button) findViewById(R.id.btn_pregunta_glosario);
+
+        inicializarFirebase();
 
         btn_salir.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,4 +45,31 @@ public class PreguntaScreenActivity extends AppCompatActivity {
             }
         });
     }
+
+    private void inicializarFirebase() {
+        FirebaseApp.initializeApp(this);
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference = firebaseDatabase.getReference();
+    }
+/*
+    private List<Pregunta>  rellenar_lista(){
+
+    }*/
+/*
+    public void onClick(View v) {
+        switch (v.getId()) {
+
+            case R.id.: {
+            }
+
+            case R.id.: {
+            }
+
+            case R.id.: {
+            }
+
+            case R.id.: {
+            }
+        }
+    }*/
 }

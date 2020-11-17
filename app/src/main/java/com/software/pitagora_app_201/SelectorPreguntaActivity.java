@@ -2,7 +2,10 @@ package com.software.pitagora_app_201;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -23,52 +26,69 @@ public class SelectorPreguntaActivity extends AppCompatActivity {
         setContentView(R.layout.selector_pregunta);
         Integer total_correctas = (Integer) getIntent().getSerializableExtra("Correctas");
         Persona P = (Persona) getIntent().getSerializableExtra("usuario");
-        P.setCorrectas_en_geo(10);
+        setiarBotones();
         Integer Control = 0;
-        for (Button Btn : lista_Botonera){
-            if (Control>total_correctas){
+        for (Button Btn : lista_Botonera) {
+            if (Control >= total_correctas) {
                 break;
-            }else{
-                Btn.setBackgroundColor("#39CA11");
+            } else {
+                Btn.setEnabled(false);
+                Btn.setTextColor(Color.parseColor("#FFFFFF"));
+                Btn.setBackgroundColor(Color.parseColor("#1AFF00"));
             }
+            Control=Control+1;
         }
 
         titulo = (TextView) findViewById(R.id.titulo_selector_preguntas);
         recogerExtras();
-        setiarBotones();
 
     }
 
     public void setiarBotones(){
         Button btn1 = (Button) findViewById(R.id.btn_pregunta_1_1);
+        lista_Botonera.add(btn1);
         Button btn2 = (Button) findViewById(R.id.btn_pregunta_1_2);
+        lista_Botonera.add(btn2);
         Button btn3 = (Button) findViewById(R.id.btn_pregunta_1_3);
+        lista_Botonera.add(btn3);
         Button btn4 = (Button) findViewById(R.id.btn_pregunta_1_4);
+        lista_Botonera.add(btn4);
 
         Button btn5 = (Button) findViewById(R.id.btn_pregunta_2_1);
+        lista_Botonera.add(btn5);
         Button btn6 = (Button) findViewById(R.id.btn_pregunta_2_2);
+        lista_Botonera.add(btn6);
         Button btn7 = (Button) findViewById(R.id.btn_pregunta_2_3);
+        lista_Botonera.add(btn7);
         Button btn8 = (Button) findViewById(R.id.btn_pregunta_2_4);
+        lista_Botonera.add(btn8);
 
         Button btn9 = (Button) findViewById(R.id.btn_pregunta_3_1);
+        lista_Botonera.add(btn9);
         Button btn10 = (Button) findViewById(R.id.btn_pregunta_3_2);
+        lista_Botonera.add(btn10);
         Button btn11 = (Button) findViewById(R.id.btn_pregunta_3_3);
+        lista_Botonera.add(btn11);
         Button btn12 = (Button) findViewById(R.id.btn_pregunta_3_4);
+        lista_Botonera.add(btn12);
 
         Button btn13 = (Button) findViewById(R.id.btn_pregunta_4_1);
+        lista_Botonera.add(btn13);
         Button btn14 = (Button) findViewById(R.id.btn_pregunta_4_2);
+        lista_Botonera.add(btn14);
         Button btn15 = (Button) findViewById(R.id.btn_pregunta_4_3);
+        lista_Botonera.add(btn15);
         Button btn16 = (Button) findViewById(R.id.btn_pregunta_4_4);
+        lista_Botonera.add(btn16);
 
         Button btn17 = (Button) findViewById(R.id.btn_pregunta_5_1);
+        lista_Botonera.add(btn17);
         Button btn18 = (Button) findViewById(R.id.btn_pregunta_5_2);
+        lista_Botonera.add(btn18);
         Button btn19 = (Button) findViewById(R.id.btn_pregunta_5_3);
+        lista_Botonera.add(btn19);
         Button btn20 = (Button) findViewById(R.id.btn_pregunta_5_4);
-
-        Button[] buttonArray = {btn1,btn2,btn3,btn4,btn5,btn6,btn7,btn8,btn9,btn10,btn11,btn12,btn13,btn14,btn15,btn16,btn17,btn18,btn19,btn20};
-        for (int i = 0; i < 21; i++){
-                lista_Botonera.add(buttonArray[i]);
-        }
+        lista_Botonera.add(btn20);
     }
 
     public void recogerExtras() {
@@ -79,6 +99,96 @@ public class SelectorPreguntaActivity extends AppCompatActivity {
     }
 
     public void onClick(View v) {
+        switch (v.getId()) {
 
+            case R.id.btn_pregunta_1_1: {
+                Intent intent = new Intent(SelectorPreguntaActivity.this, PreguntaScreenActivity.class);
+                startActivity(intent);
+            }
+            case R.id.btn_pregunta_1_2: {
+                Intent intent = new Intent(SelectorPreguntaActivity.this, PreguntaScreenActivity.class);
+                startActivity(intent);
+            }
+            case R.id.btn_pregunta_1_3: {
+                Intent intent = new Intent(SelectorPreguntaActivity.this, PreguntaScreenActivity.class);
+                startActivity(intent);
+            }
+            case R.id.btn_pregunta_1_4: {
+                Intent intent = new Intent(SelectorPreguntaActivity.this, PreguntaScreenActivity.class);
+                startActivity(intent);
+            }
+
+
+            case R.id.btn_pregunta_2_1: {
+                Intent intent = new Intent(SelectorPreguntaActivity.this, PreguntaScreenActivity.class);
+                startActivity(intent);
+            }
+            case R.id.btn_pregunta_2_2: {
+                Intent intent = new Intent(SelectorPreguntaActivity.this, PreguntaScreenActivity.class);
+                startActivity(intent);
+            }
+            case R.id.btn_pregunta_2_3: {
+                Intent intent = new Intent(SelectorPreguntaActivity.this, PreguntaScreenActivity.class);
+                startActivity(intent);
+            }
+            case R.id.btn_pregunta_2_4: {
+                Intent intent = new Intent(SelectorPreguntaActivity.this, PreguntaScreenActivity.class);
+                startActivity(intent);
+            }
+
+
+            case R.id.btn_pregunta_3_1: {
+                Intent intent = new Intent(SelectorPreguntaActivity.this, PreguntaScreenActivity.class);
+                startActivity(intent);
+            }
+            case R.id.btn_pregunta_3_2: {
+                Intent intent = new Intent(SelectorPreguntaActivity.this, PreguntaScreenActivity.class);
+                startActivity(intent);
+            }
+            case R.id.btn_pregunta_3_3: {
+                Intent intent = new Intent(SelectorPreguntaActivity.this, PreguntaScreenActivity.class);
+                startActivity(intent);
+            }
+            case R.id.btn_pregunta_3_4: {
+                Intent intent = new Intent(SelectorPreguntaActivity.this, PreguntaScreenActivity.class);
+                startActivity(intent);
+            }
+
+
+            case R.id.btn_pregunta_4_1: {
+                Intent intent = new Intent(SelectorPreguntaActivity.this, PreguntaScreenActivity.class);
+                startActivity(intent);
+            }
+            case R.id.btn_pregunta_4_2: {
+                Intent intent = new Intent(SelectorPreguntaActivity.this, PreguntaScreenActivity.class);
+                startActivity(intent);
+            }
+            case R.id.btn_pregunta_4_3: {
+                Intent intent = new Intent(SelectorPreguntaActivity.this, PreguntaScreenActivity.class);
+                startActivity(intent);
+            }
+            case R.id.btn_pregunta_4_4: {
+                Intent intent = new Intent(SelectorPreguntaActivity.this, PreguntaScreenActivity.class);
+                startActivity(intent);
+            }
+
+
+            case R.id.btn_pregunta_5_1: {
+                Intent intent = new Intent(SelectorPreguntaActivity.this, PreguntaScreenActivity.class);
+                startActivity(intent);
+            }
+            case R.id.btn_pregunta_5_2: {
+                Intent intent = new Intent(SelectorPreguntaActivity.this, PreguntaScreenActivity.class);
+                startActivity(intent);
+            }
+            case R.id.btn_pregunta_5_3: {
+                Intent intent = new Intent(SelectorPreguntaActivity.this, PreguntaScreenActivity.class);
+                startActivity(intent);
+            }
+            case R.id.btn_pregunta_5_4: {
+                Intent intent = new Intent(SelectorPreguntaActivity.this, PreguntaScreenActivity.class);
+                startActivity(intent);
+            }
+        }
     }
 }
