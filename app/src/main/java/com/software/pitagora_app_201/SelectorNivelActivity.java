@@ -73,7 +73,7 @@ public class SelectorNivelActivity extends AppCompatActivity {
                 startActivityForResult(intent, 0);
             }
 
-            case R.id.btn_numeros_selector{
+            case R.id.btn_numeros_selector:{
                 Persona usuario = (Persona) getIntent().getSerializableExtra("usuario");
                 Intent intent = new Intent (v.getContext(), SelectorPreguntaActivity.class);
                 intent.putExtra("usuario", usuario);

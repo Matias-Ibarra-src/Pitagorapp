@@ -27,7 +27,7 @@ TextView puntaje;
         puntaje= (TextView) findViewById(R.id.text_puntaje);
         Persona  usuarioLog = (Persona) getIntent().getSerializableExtra("usuario");
         nombre.setText(usuarioLog.getNombre());
-        puntaje.setText(usuarioLog.getPuntajeTotal());
+        puntaje.setText(String.format("%d",usuarioLog.getPuntajeTotal()));
 
         btn_start.setOnClickListener(new View.OnClickListener() {
             @Override
