@@ -148,7 +148,7 @@ public class RegisterActivity extends AppCompatActivity {
                                     databaseReference.child("Persona").child(p.getLocalid()).setValue(p);
                                     agregar();
                                     limpiarCajas();
-                                    Intent intent = new Intent(RegisterActivity.this,LoginActivity.class);
+                                    Intent intent = new Intent(RegisterActivity.this,MainActivity.class);
                                     startActivity(intent);
                                 }
                             }

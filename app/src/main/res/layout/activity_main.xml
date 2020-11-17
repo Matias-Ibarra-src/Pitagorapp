@@ -7,62 +7,86 @@
     android:background="@drawable/fondo"
     tools:context=".MainActivity">
 
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="32dp"
+        android:onClick="onClick"
+        android:text="@string/login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_contraseña" />
+
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="293dp"
-        android:layout_height="251dp"
-        android:layout_marginTop="104dp"
+        android:layout_width="269dp"
+        android:layout_height="134dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo" />
 
-    <Button
-        android:id="@+id/btn_Start"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="237dp"
-        android:layout_height="71dp"
-        android:layout_marginTop="72dp"
-        android:backgroundTint="#F05F11"
-        android:elevation="@android:dimen/thumbnail_height"
-        android:text="@string/btn_start"
-        android:textColor="#FFFFFF"
-        android:textSize="36sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        tools:text="@string/btn_start" />
-
-    <Button
-        android:id="@+id/btn_glosary"
-        style="@style/Widget.AppCompat.Button.Borderless.Colored"
-        android:layout_width="161dp"
+    <EditText
+        android:id="@+id/text_correo"
+        android:layout_width="match_parent"
         android:layout_height="57dp"
-        android:layout_marginTop="16dp"
-        android:backgroundTint="#00FFCC"
-        android:text='@string/btn_glossary'
-        android:textColor="#000000"
-        android:textStyle="bold|italic"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:ems="10"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <EditText
+        android:id="@+id/text_contraseña"
+        android:layout_width="match_parent"
+        android:layout_height="63dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:ems="10"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_Start" />
+        app:layout_constraintTop_toBottomOf="@+id/text_correo" />
 
     <Button
-        android:id="@+id/btn_to_login"
-        android:layout_width="147dp"
-        android:layout_height="42dp"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:backgroundTint="#89F029"
-        android:drawableRight="@drawable/card"
-        android:drawablePadding="8dp"
-        android:text="@string/login"
-        android:textColor="@android:color/white"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        android:id="@+id/btn_to_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="32dp"
+        android:onClick="onClick"
+        android:text="@string/register"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.908"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.301" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_login" />
+
+    <Button
+        android:id="@+id/btn_olvide_contra"
+        android:layout_width="349dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#00FFFFFF"
+        android:onClick="onClick"
+        android:text="olvide mi contraseña"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_to_register" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

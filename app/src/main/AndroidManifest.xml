@@ -19,7 +19,6 @@
         <activity android:name=".SelectorPreguntaActivity" />
         <activity android:name=".SelectorNivelActivity" />
         <activity android:name=".PreguntaScreenActivity" />
-        <activity android:name=".LoginActivity" />
         <activity android:name=".GlosarioScreenCategoriaActivity" />
         <activity android:name=".GlosarioInicioActivity" />
         <activity android:name=".MainActivity">
