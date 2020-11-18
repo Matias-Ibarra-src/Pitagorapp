@@ -120,97 +120,134 @@ public class SelectorPreguntaActivity extends AppCompatActivity {
         switch (v.getId()) {
 
             case R.id.btn_pregunta_1_1: {
-                        Intent intent = new Intent(SelectorPreguntaActivity.this, PreguntaScreenActivity.class);
-                        intent.putExtra("usuario",P);
-                        intent.putExtra("cate",categoria)
-                        startActivity(intent);
-
+                Intent intent = new Intent(SelectorPreguntaActivity.this, PreguntaScreenActivity.class);
+                intent.putExtra("usuario",P);
+                intent.putExtra("cate",categoria);
+                startActivity(intent);
                 break;
             }
-            /*case R.id.btn_pregunta_1_2: {
+            case R.id.btn_pregunta_1_2: {
                 Intent intent = new Intent(SelectorPreguntaActivity.this, PreguntaScreenActivity.class);
+                intent.putExtra("usuario",P);
+                intent.putExtra("cate",categoria);
                 startActivity(intent);
             }
             case R.id.btn_pregunta_1_3: {
                 Intent intent = new Intent(SelectorPreguntaActivity.this, PreguntaScreenActivity.class);
+                intent.putExtra("usuario",P);
+                intent.putExtra("cate",categoria);
                 startActivity(intent);
             }
             case R.id.btn_pregunta_1_4: {
                 Intent intent = new Intent(SelectorPreguntaActivity.this, PreguntaScreenActivity.class);
+                intent.putExtra("usuario",P);
+                intent.putExtra("cate",categoria);
                 startActivity(intent);
             }
 
 
             case R.id.btn_pregunta_2_1: {
                 Intent intent = new Intent(SelectorPreguntaActivity.this, PreguntaScreenActivity.class);
+                intent.putExtra("usuario",P);
+                intent.putExtra("cate",categoria);
                 startActivity(intent);
             }
             case R.id.btn_pregunta_2_2: {
                 Intent intent = new Intent(SelectorPreguntaActivity.this, PreguntaScreenActivity.class);
+                intent.putExtra("usuario",P);
+                intent.putExtra("cate",categoria);
                 startActivity(intent);
             }
             case R.id.btn_pregunta_2_3: {
                 Intent intent = new Intent(SelectorPreguntaActivity.this, PreguntaScreenActivity.class);
+                intent.putExtra("usuario",P);
+                intent.putExtra("cate",categoria);
                 startActivity(intent);
             }
             case R.id.btn_pregunta_2_4: {
                 Intent intent = new Intent(SelectorPreguntaActivity.this, PreguntaScreenActivity.class);
+                intent.putExtra("usuario",P);
+                intent.putExtra("cate",categoria);
                 startActivity(intent);
             }
 
 
             case R.id.btn_pregunta_3_1: {
                 Intent intent = new Intent(SelectorPreguntaActivity.this, PreguntaScreenActivity.class);
+                intent.putExtra("usuario",P);
+                intent.putExtra("cate",categoria);
                 startActivity(intent);
             }
             case R.id.btn_pregunta_3_2: {
                 Intent intent = new Intent(SelectorPreguntaActivity.this, PreguntaScreenActivity.class);
+                intent.putExtra("usuario",P);
+                intent.putExtra("cate",categoria);
                 startActivity(intent);
             }
             case R.id.btn_pregunta_3_3: {
                 Intent intent = new Intent(SelectorPreguntaActivity.this, PreguntaScreenActivity.class);
+                intent.putExtra("usuario",P);
+                intent.putExtra("cate",categoria);
                 startActivity(intent);
             }
             case R.id.btn_pregunta_3_4: {
                 Intent intent = new Intent(SelectorPreguntaActivity.this, PreguntaScreenActivity.class);
+                intent.putExtra("usuario",P);
+                intent.putExtra("cate",categoria);
                 startActivity(intent);
             }
 
 
             case R.id.btn_pregunta_4_1: {
                 Intent intent = new Intent(SelectorPreguntaActivity.this, PreguntaScreenActivity.class);
+                intent.putExtra("usuario",P);
+                intent.putExtra("cate",categoria);
                 startActivity(intent);
             }
             case R.id.btn_pregunta_4_2: {
                 Intent intent = new Intent(SelectorPreguntaActivity.this, PreguntaScreenActivity.class);
+                intent.putExtra("usuario",P);
+                intent.putExtra("cate",categoria);
                 startActivity(intent);
             }
             case R.id.btn_pregunta_4_3: {
                 Intent intent = new Intent(SelectorPreguntaActivity.this, PreguntaScreenActivity.class);
+                intent.putExtra("usuario",P);
+                intent.putExtra("cate",categoria);
                 startActivity(intent);
             }
             case R.id.btn_pregunta_4_4: {
                 Intent intent = new Intent(SelectorPreguntaActivity.this, PreguntaScreenActivity.class);
+                intent.putExtra("usuario",P);
+                intent.putExtra("cate",categoria);
                 startActivity(intent);
             }
 
 
             case R.id.btn_pregunta_5_1: {
                 Intent intent = new Intent(SelectorPreguntaActivity.this, PreguntaScreenActivity.class);
+                intent.putExtra("usuario",P);
+                intent.putExtra("cate",categoria);
                 startActivity(intent);
             }
             case R.id.btn_pregunta_5_2: {
                 Intent intent = new Intent(SelectorPreguntaActivity.this, PreguntaScreenActivity.class);
+                intent.putExtra("usuario",P);
+                intent.putExtra("cate",categoria);
                 startActivity(intent);
             }
             case R.id.btn_pregunta_5_3: {
                 Intent intent = new Intent(SelectorPreguntaActivity.this, PreguntaScreenActivity.class);
+                intent.putExtra("usuario",P);
+                intent.putExtra("cate",categoria);
                 startActivity(intent);
             }
             case R.id.btn_pregunta_5_4: {
                 Intent intent = new Intent(SelectorPreguntaActivity.this, PreguntaScreenActivity.class);
+                intent.putExtra("usuario",P);
+                intent.putExtra("cate",categoria);
                 startActivity(intent);
-            }*/
+            }
         }
     }
 }
