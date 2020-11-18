@@ -1,5 +1,6 @@
 package com.software.pitagora_app_201;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -10,13 +11,22 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.software.pitagora_app_201.model.Persona;
+import com.software.pitagora_app_201.model.Pregunta;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class SelectorPreguntaActivity extends AppCompatActivity {
 
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference databaseReference;
     TextView titulo;
     public List<Button> lista_Botonera = new ArrayList<Button>();
 
@@ -25,7 +35,7 @@ public class SelectorPreguntaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.selector_pregunta);
         Integer total_correctas = (Integer) getIntent().getSerializableExtra("Correctas");
-        Persona P = (Persona) getIntent().getSerializableExtra("usuario");
+
         setiarBotones();
         Integer Control = 0;
         for (Button Btn : lista_Botonera) {
@@ -40,8 +50,14 @@ public class SelectorPreguntaActivity extends AppCompatActivity {
         }
 
         titulo = (TextView) findViewById(R.id.titulo_selector_preguntas);
+        inicializarFirebase();
         recogerExtras();
 
+    }
+    private void inicializarFirebase() {
+        FirebaseApp.initializeApp(this);
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference = firebaseDatabase.getReference();
     }
 
     public void setiarBotones(){
@@ -99,13 +115,19 @@ public class SelectorPreguntaActivity extends AppCompatActivity {
     }
 
     public void onClick(View v) {
+        Persona P = (Persona) getIntent().getSerializableExtra("usuario");
+        String categoria = titulo.getText().toString();
         switch (v.getId()) {
 
             case R.id.btn_pregunta_1_1: {
-                Intent intent = new Intent(SelectorPreguntaActivity.this, PreguntaScreenActivity.class);
-                startActivity(intent);
+                        Intent intent = new Intent(SelectorPreguntaActivity.this, PreguntaScreenActivity.class);
+                        intent.putExtra("usuario",P);
+                        intent.putExtra("cate",categoria)
+                        startActivity(intent);
+
+                break;
             }
-            case R.id.btn_pregunta_1_2: {
+            /*case R.id.btn_pregunta_1_2: {
                 Intent intent = new Intent(SelectorPreguntaActivity.this, PreguntaScreenActivity.class);
                 startActivity(intent);
             }
@@ -188,7 +210,7 @@ public class SelectorPreguntaActivity extends AppCompatActivity {
             case R.id.btn_pregunta_5_4: {
                 Intent intent = new Intent(SelectorPreguntaActivity.this, PreguntaScreenActivity.class);
                 startActivity(intent);
-            }
+            }*/
         }
     }
 }

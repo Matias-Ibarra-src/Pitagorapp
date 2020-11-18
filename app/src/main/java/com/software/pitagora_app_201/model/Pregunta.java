@@ -1,6 +1,8 @@
 package com.software.pitagora_app_201.model;
 
-public class Pregunta {
+import java.io.Serializable;
+
+public class Pregunta implements Serializable {
 
     String LocalId;
     String RespuestaCorrecta;
@@ -9,6 +11,16 @@ public class Pregunta {
     String Respuesta3;
     String Respuesta4;
     Integer Puntaje;
+
+    public String getCategoria() {
+        return Categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        Categoria = categoria;
+    }
+
+    String Categoria;
 
     public String getPregunta() {
         return pregunta;

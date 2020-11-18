@@ -19,6 +19,9 @@ import com.google.firebase.database.ValueEventListener;
 import com.software.pitagora_app_201.model.Persona;
 import com.software.pitagora_app_201.model.Pregunta;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class SelectorNivelActivity extends AppCompatActivity {
 
 
